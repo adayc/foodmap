@@ -1,0 +1,118 @@
+ /*Configuracion inicial de la página*/
+/*Resetendo el layout */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+ 
+}
+
+.help{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/*Clases reutilizables*/
+.flex-center{
+  display:flex;
+  align-items:center;
+}
+
+.justify-center{
+  justify-content:center;
+}
+
+.bg-transparent{
+  background-color: transparent;
+}
+
+.text-white{
+  color: white;
+}
+
+.bg-white{
+  background: #fff;
+}
+
+
+
+.align-items-center{
+  align-items:center;
+}
+
+.align-self-start{
+  align-self:flex-start;
+}
+
+.space-between{
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+
+}
+
+.stretch{
+  min-width:1rem;
+}
+
+.bg-purple{
+  background-color:#FF00BF;
+  margin-top:18vh;
+}
+/*Estilo del index*/
+.gradient{
+  background: linear-gradient(#76278F, #FF00BF);
+  height:100vh;
+  width:100%;
+  
+}
+
+/*Estilo del signup*/
+.signup{
+  background-image:url('../assets/images/main-image.jpg');
+  background-position:center;
+  background-size:100% 100%;
+  height:100vh;
+  
+}
+
+.img-top{
+  height:10vh;
+}
+
+.main-image{
+  height:50vh;
+}
+
+.group-btn{
+  display:flex;
+  justify-content:space-around;
+
+}
+/*Estilos de register-email*/
+.blue{
+  color:#72a3cc;
+  font-weight:bold;
+}
+
+.blue:hover{
+  color:#72a3cc;
+}
+
+.outline{
+  outline: transparent;
+  border:0;
+}
+
+/*Estilo que nos indica que hay un error en el texto ingresado*/
+.error{
+  border:solid 1px red;
+}
+
+
+@media screen and (min-width: 768px) {
+  
+  
+}
