@@ -138,19 +138,19 @@ $(document).ready(function() {
           $('#modal-map').empty();
           $('#modal-map').append(restaurants[i]['iframe']);
             
-            $('#modal-data').append('<p>' + restaurants[i]['address'] + '</p>');
-            console.log('aca222');
-          $('#modal-data').append('<p><a href=\'' + restaurants[i]['website'] + '\'>' + restaurants[i]['website'] + '</a></p>');
+            $('#modal-data').append('<p>Dirección:' + restaurants[i]['addres'] + '</p>');
+            $('#modal-data').append('<p>Aforo:' + restaurants[i]['aforo'] + '</p>');
+            $('#modal-data').append('<p>Formas de pago:' + restaurants[i]['payment'] + '</p>');
+            $('#modal-data').append('<p>Se aceptan mascotas:' + restaurants[i]['petfriendly'] + '</p>');
+          
+          $('#modal-data').append('<p><a href="' + restaurants[i]['website'] + '">' + restaurants[i]['website'] + '</a></p>');
         }
       }
-      $('#modal').modal('open');
-      /**
-      * If the user clicks on the modal overlay, the search resets itself
-      */
-      $('.modal-overlay').click(function() {
-        $('#restaurants').children().remove();
-        // $("#filter").val(null);
-      });
+      
+      // Aparece el modal
+      $('#modal').modal('show')    
+      
+      
     });
   });
 

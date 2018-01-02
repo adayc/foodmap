@@ -122,6 +122,26 @@ width:75vw;
 }
   
 
+.modal-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.modal-data {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-data p {
+  margin: 0;
+  text-align: center;
+}
+
+
+
 
 @media screen and (min-width : 768px) {
  /* .results img{
