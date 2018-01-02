@@ -1,12 +1,11 @@
 
-
-
+// Cargamos el mapa cuando cargue la página
 var myLocation;
-
+  
 var initMap = (function() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: -34.397,
-lng: 150.644},
+      lng: 150.644},
     zoom: 14
   });
   var infoWindow = new google.maps.InfoWindow({map: map});
@@ -44,7 +43,7 @@ lng: 150.644},
           infoWindow.open(map, this);
         });
       };
-
+  
       map.setCenter(pos);
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
@@ -53,12 +52,42 @@ lng: 150.644},
     handleLocationError(false, infoWindow, map.getCenter());
   }
 });
-
+  
 var handleLocationError = (function(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
   infoWindow.setContent(browserHasGeolocation ?
     'Error: The Geolocation service failed.' :
     'Error: Your browser doesn\'t support geolocation.');
+});
+
+$(document).ready(function() {
+  // Creamos el array para cargar los tipos de comida
+  var kindOfFood = [];
+//Añadimos al array todos los elementos que se encuentran en el atributo 'kind' del objeto
+  for (i = 0;i < restaurants.length;i++) {
+    newKind = restaurants[i]['kind'];
+    kindOfFood.push(newKind);
+  }
+  //Creamos una función para eliminar elementos duplicados
+
+  Array.prototype.unique = function() {
+    var el = this.concat().sort();
+    for (var i = 1; i < el.length;) {
+      if (el[i - 1] === el[i])
+        el.splice(i, 1);
+      else
+        i++;
+    }
+    return el;
+  };
+
+  var arrKindOfFood=kindOfFood.unique();
+
+  console.log(arrKindOfFood);
+
+  
+  var $datalist = $('#kind-of-food');
+  console.log($datalist);
 });
 
 /*
