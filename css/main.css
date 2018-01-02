@@ -57,12 +57,16 @@ justify-content:space-between;
   min-width:1rem;
 }
 
-/*
-.bg-purple{
-  background-color:#FF00BF;
-  margin-top:18vh;
+
+.bg-gradient{
+  background: linear-gradient(#8B2D55, #00BF6D);
+  
 }
-*/
+
+.font-pacifico{
+  font-family: 'Pacifico', cursive;
+}
+
 
 /*Estilo del index*/
 .gradient{
