@@ -129,7 +129,7 @@ $(document).ready(function() {
      
       for (var i = 0; i < restaurants.length; i++) {
         if (place == restaurants[i]['name']) {
-           // Obtenemos los datos
+          // Obtenemos los datos
           $('#title-modal').empty();
           $('#modal-data').empty();
           $('#title-modal').html(restaurants[i]['name']);

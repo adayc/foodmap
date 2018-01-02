@@ -22,7 +22,7 @@ Los resultados fueron los siguientes:
 
 ## Vistas del website
 Estas son las vistas que posee el app.
-![Imagenes](assets/images/d1.JPG)
+![Imagenes](assets/images/d1.JPEG)
 
 ## Descripción de las vistas
 * Vista splash con una duración de 5 segundos.
