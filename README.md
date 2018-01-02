@@ -1,46 +1,32 @@
-# Proyecto:Labcar
+# Proyecto:Lyft
 _____________
 
 ## Descripción del proyecto
-El siguiente proyecto es la maquetación de la página web de LabCar empleando el framework Bootstrap
+El siguiente proyecto es el desarrollo de una web-app, en el cual los usuarios cumplen los pasos necesarios para que  puedan registrarse. empleando el framework Bootstrap
 
 La propuesta está estructurada con un diseño de grillas de 12 columnas en CSS para que se encuentre bajo los lineamientos del responsive design y sea adapatable a cada dispositivo en que se realice.
-## Vistas desktop
-Estas son las vistas para dispositivos con resoluciones mayores o iguales a 768px.
+## Vistas del website
+Estas son las vistas que posee el app.
 ![Imagenes](assets/images/d1.JPG)
 ![Imagenes](assets/images/d2.JPG)
-![Imagenes](assets/images/d3.JPG)
-![Imagenes](assets/images/d4.JPG)
-![Imagenes](assets/images/d5.JPG)
-![Imagenes](assets/images/d6.JPG)
-![Imagenes](assets/images/d7.JPG)
 
-## Vistas mobile
-Estas son las vistas para dispositivos con resoluciones menores a 768px.
-![Imagenes](assets/images/m1.JPG)
-![Imagenes](assets/images/m2.JPG)
 
-## Partes del website
-##1 Un header con un navbar que se convierte en un menú desplegable en dispositivos móviles.
+## Descripción de las vistas
+* Vista splash con una duración de 5 segundos.
+* Vista sign up en la cual se tendrá la opción de elegir el botón "Sign up" para registrarse.
+* Vista register en la cual se elige el país de procedencia para registrarse, al pulsar el botón "Next" generará un código aleatorio de registro.
+* Vista verify en la cual se ingresa el código enviado.
+* Vista register-email, luego de colocar el número aleatorio se visualiza esta vista, en la que se registra el nombre y email.
+* Vista validate, en el caso que sea exitoso el registro se visualizará esta vista.
 
-##2 Una primera sección  con la imagen principal. El contenido varía de acuerdo a los dispositivos. En mobile solo hay un botón de "Descargar la app", en dispositivos mayores a resolución 778 , tenemos el botón de "Registro" y el de "Convertirse en conductor"
 
-##3 Una sección descriptiva acerca la nueva aplicación.
 
-##4 Una sección con un botón invitando a  "Convertirse en conductor"
 
-##5 Una sección sobre como calcular la ruta y las tarifas con una imagen de Google Maps que genera la ruta de inicio a fin.
 
-##6 Un footer con un menú de navegación el cual aumenta  en los dispositivos con resolución mayor a 768 px.
 
-## Ventanas modales
-
-###1 Formulario de Login.
-###2 Formulario de regisro.
-###3 Formulario de conviertete en conductor.
 
 ## Detalles adicionales
--Para esta aplicación se empleó : Framework Bootstrap HTML5, CSS3 y Javascript.
+-Para esta aplicación se empleó : Framework Bootstrap HTML5, CSS3 y JQuery.
 
   
   Cualquier consulta, duda o sugerencia puede realizarla al correo: adayc@hotmail.com

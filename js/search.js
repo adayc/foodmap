@@ -89,13 +89,14 @@ $(document).ready(function() {
     $('#kind-of-food').append($option);
   }
 
-  // Deshabilitamos el boton de búsqueda
+  // Deshabilitamos el boton de búsqueda al cargar la página
   $('#btn-search').prop('disabled', true);
 
+  // Deshabilitamos el botón de búsqueda cuando se ingrese algún valor al input
   $('#list-kind-of-food').on('input', function() {
     if ($('#list-kind-of-food').val().length === 0) {
       $('#btn-search').prop('disabled', true);
-    }else {
+    } else {
       $('#btn-search').prop('disabled', false);
     }
   });
@@ -107,11 +108,47 @@ $(document).ready(function() {
       if (restaurants[i]['kind'] == filterSearch) {
         var image = restaurants[i]['image'];
             
-        var $newImg = $('<img src="../assets/images/' + restaurants[i]['image'] + '" alt="' + restaurants[i]['name'] + '">').addClass('margin-top');
+        var $newImg = $('<img class="img-food margin-top" src="../assets/images/' + restaurants[i]['image'] + '" alt="' + restaurants[i]['name'] + '">');
         $('#results').append($newImg);
       }
     };
+
+    $('#results img').on('click', function() {
+      console.log('aca');
+      var place = $(this).children('img').attr('alt');
+      console.log($(this).children('img'));
+      for (var i = 0; i < restaurants.length; i++) {
+        if (place == restaurants[i]['name']) {
+          console.log('aca222');
+          $('#title-modal').empty();
+          $('#modal-data').empty();
+          $('#title-modal').html(restaurants[i]['name']);
+          $('#modal-map').empty();
+          // var newName = restaurants[i].name.replace(/ /g, "+");
+          
+            // var newAddress = restaurants[i].address[n].replace(/ /g, "+");
+            // var addressGoogle = newAddress.replace(/,/g, "");
+            $('#modal-map').append(restaurants[i]['iframe']);
+            $('#modal-data').append('<p>' + restaurants[i]['address'] + '</p>');
+          
+          $('#modal-data').append('<p><a href=\'' + restaurants[i]['website'] + '\'>' + restaurants[i]['website'] + '</a></p>');
+        }
+      }
+      $('#modal').modal('open');
+      /**
+      * If the user clicks on the modal overlay, the search resets itself
+      */
+      $('.modal-overlay').click(function() {
+        $('#restaurants').children().remove();
+        // $("#filter").val(null);
+      });
+    });
   });
+  // Evento mouseover
+  $('.results img').on('mouseover', function() {
+    
+  });
+  console.log($('#results img'));
 });
 
 /*
