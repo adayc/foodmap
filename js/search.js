@@ -108,29 +108,38 @@ $(document).ready(function() {
       if (restaurants[i]['kind'] == filterSearch) {
         var image = restaurants[i]['image'];
             
-        var $newImg = $('<img class="img-food margin-top" src="../assets/images/' + restaurants[i]['image'] + '" alt="' + restaurants[i]['name'] + '">');
+       /* var $newImg = $('<img class="img-food margin-top" src="../assets/images/' + restaurants[i]['image'] + '" alt="' + restaurants[i]['name'] + '">');*/
+
+       var $newImg =('<div class="container-img"><p class="overlay-title">' + restaurants[i]['name']+ '</p> <img class="img-food margin-top" src="../assets/images/' + restaurants[i]['image'] + '" alt="' + restaurants[i]['name'] + '"></div></div>');
+
         $('#results').append($newImg);
       }
     };
 
-    $('#results img').on('click', function() {
-      console.log('aca');
+    //// Efecto mouseover
+    $('.container-img').mouseover(function() {
+      $(':nth-child(1)', this).css({'opacity': '1'});
+    });
+
+    $('.container-img').mouseout(function() {
+      $(":nth-child(1)", this).css({"opacity": "0"});
+    });
+
+    $('.container-img').on('click', function() {
+      
       var place = $(this).children('img').attr('alt');
-      console.log($(this).children('img'));
+     
       for (var i = 0; i < restaurants.length; i++) {
         if (place == restaurants[i]['name']) {
-          console.log('aca222');
+          
           $('#title-modal').empty();
           $('#modal-data').empty();
           $('#title-modal').html(restaurants[i]['name']);
           $('#modal-map').empty();
-          // var newName = restaurants[i].name.replace(/ /g, "+");
-          
-            // var newAddress = restaurants[i].address[n].replace(/ /g, "+");
-            // var addressGoogle = newAddress.replace(/,/g, "");
-            $('#modal-map').append(restaurants[i]['iframe']);
+          $('#modal-map').append(restaurants[i]['iframe']);
+            
             $('#modal-data').append('<p>' + restaurants[i]['address'] + '</p>');
-          
+            console.log('aca222');
           $('#modal-data').append('<p><a href=\'' + restaurants[i]['website'] + '\'>' + restaurants[i]['website'] + '</a></p>');
         }
       }
@@ -144,11 +153,7 @@ $(document).ready(function() {
       });
     });
   });
-  // Evento mouseover
-  $('.results img').on('mouseover', function() {
-    
-  });
-  console.log($('#results img'));
+
 });
 
 /*
