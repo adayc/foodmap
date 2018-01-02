@@ -107,91 +107,47 @@ $(document).ready(function() {
     for (var i = 0; i < restaurants.length; i++) {
       if (restaurants[i]['kind'] == filterSearch) {
         var image = restaurants[i]['image'];
-            
-       /* var $newImg = $('<img class="img-food margin-top" src="../assets/images/' + restaurants[i]['image'] + '" alt="' + restaurants[i]['name'] + '">');*/
+        
 
-       var $newImg =('<div class="container-img"><p class="overlay-title">' + restaurants[i]['name']+ '</p> <img class="img-food margin-top" src="../assets/images/' + restaurants[i]['image'] + '" alt="' + restaurants[i]['name'] + '"></div></div>');
+        var $newImg = ('<div class="container-img"><p class="overlay-title">' + restaurants[i]['name'] + '</p> <img class="img-food margin-top" src="../assets/images/' + restaurants[i]['image'] + '" alt="' + restaurants[i]['name'] + '"></div></div>');
 
         $('#results').append($newImg);
       }
     };
 
-    //// Efecto mouseover
+    // Efecto mouseover
     $('.container-img').mouseover(function() {
       $(':nth-child(1)', this).css({'opacity': '1'});
     });
 
     $('.container-img').mouseout(function() {
-      $(":nth-child(1)", this).css({"opacity": "0"});
+      $(':nth-child(1)', this).css({'opacity': '0'});
     });
 
     $('.container-img').on('click', function() {
-      
       var place = $(this).children('img').attr('alt');
      
       for (var i = 0; i < restaurants.length; i++) {
         if (place == restaurants[i]['name']) {
-          
+           // Obtenemos los datos
           $('#title-modal').empty();
           $('#modal-data').empty();
           $('#title-modal').html(restaurants[i]['name']);
           $('#modal-map').empty();
           $('#modal-map').append(restaurants[i]['iframe']);
             
-            $('#modal-data').append('<p>Dirección:' + restaurants[i]['addres'] + '</p>');
-            $('#modal-data').append('<p>Aforo:' + restaurants[i]['aforo'] + '</p>');
-            $('#modal-data').append('<p>Formas de pago:' + restaurants[i]['payment'] + '</p>');
-            $('#modal-data').append('<p>Se aceptan mascotas:' + restaurants[i]['petfriendly'] + '</p>');
+          $('#modal-data').append('<p>Dirección:' + restaurants[i]['addres'] + '</p>');
+          $('#modal-data').append('<p>Aforo:' + restaurants[i]['aforo'] + '</p>');
+          $('#modal-data').append('<p>Formas de pago:' + restaurants[i]['payment'] + '</p>');
+          $('#modal-data').append('<p>Se aceptan mascotas:' + restaurants[i]['petfriendly'] + '</p>');
           
           $('#modal-data').append('<p><a href="' + restaurants[i]['website'] + '">' + restaurants[i]['website'] + '</a></p>');
         }
       }
       
       // Aparece el modal
-      $('#modal').modal('show')    
-      
-      
+      $('#modal').modal('show');
     });
   });
-
 });
 
-/*
-$(document).ready(function() {
-  // Deshabilitamos el boton al cargar la página
-  $('#btn-number').prop('disabled', true);
-  $('#txt-phone').prop('disabled', true);
-  // Obtenemos los codigos de ciudad de acuerdo al país
-  $('#country a').on('click', function() {
-    $('#select-country').html($(this).html() + '<span class="caret"></span>');
-    $('#code-country').val($(this).data('value'));
-    window.localStorage.setItem('codeCountry', $(this).data('value'));
-    $('#txt-phone').prop('disabled', false);
-  });
-  // Evento keyup en el texto para validar
-  $('#txt-phone').on('input', function() {
-    // Elaboramos un patrón que nos permita validar un número de celular de 9 digitos  
-    var REGEXPHONE = /^\d{9}$/;
-    // En el caso que la validación sea true se habilita el botón number y se oculta el texto de info
-    if (REGEXPHONE.test($(this).val())) {
-      // Creamos una variable en el localstorage en que almacenamos el número de teléfono.
-      window.localStorage.setItem('numberPhone', $(this).val());
-      $('#btn-number').prop('disabled', false);
-      $('#info').addClass('hidden');
-    } else {
-    // En el caso que la validación sea false se mantendra deshabilitado el botón number
-      $('#btn-number').prop('disabled', true);
-      $('#info').addClass('show');
-      $('#info').removeClass('hidden');
-    }
-  });
-  // Evento click que generara el número aleatorio
-  $('#btn-number').on('click', function() {
-    // Generamos el número aleatorio con las funciones Math.round y Math.random y la almacenamos en la variable numberRandom en el localstorage
-    window.localStorage.setItem('numberRandom', Math.round(Math.random() * 900) + 99);
-    // Enviamos el mensaje con el número generado
-    alert('LAB - ' + window.localStorage.getItem('numberRandom'));
-    // Nos dirigimos a la página verfiy.html
-    window.location.href = 'verify.html';
-  });
-});*/
