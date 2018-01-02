@@ -92,3 +92,11 @@ justify-content:space-between;
 width:75vw;
 }
 
+
+@media screen and (min-width : 768px) {
+  .results img{
+    width:25vw;
+    margin-left:1vw;
+    }
+}
+

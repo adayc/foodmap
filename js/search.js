@@ -89,6 +89,17 @@ $(document).ready(function() {
     $('#kind-of-food').append($option);
   }
 
+  // Deshabilitamos el boton de búsqueda
+  $('#btn-search').prop('disabled', true);
+
+  $('#list-kind-of-food').on('input', function() {
+    if ($('#list-kind-of-food').val().length === 0) {
+      $('#btn-search').prop('disabled', true);
+    }else {
+      $('#btn-search').prop('disabled', false);
+    }
+  });
+
   $('#btn-search').on('click', function() {
     $('#results').children().remove();
     var filterSearch = $('#list-kind-of-food').val();
@@ -96,9 +107,8 @@ $(document).ready(function() {
       if (restaurants[i]['kind'] == filterSearch) {
         var image = restaurants[i]['image'];
             
-        var $newImg = $('<img src="../assets/images/' + restaurants[i]['image'] + '" alt="'+restaurants[i]['name'] +'">').addClass('margin-top');
+        var $newImg = $('<img src="../assets/images/' + restaurants[i]['image'] + '" alt="' + restaurants[i]['name'] + '">').addClass('margin-top');
         $('#results').append($newImg);
-        
       }
     };
   });
