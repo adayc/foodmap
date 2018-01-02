@@ -63,12 +63,12 @@ var handleLocationError = (function(browserHasGeolocation, infoWindow, pos) {
 $(document).ready(function() {
   // Creamos el array para cargar los tipos de comida
   var kindOfFood = [];
-//Añadimos al array todos los elementos que se encuentran en el atributo 'kind' del objeto
+  // Añadimos al array todos los elementos que se encuentran en el atributo 'kind' del objeto
   for (i = 0;i < restaurants.length;i++) {
     newKind = restaurants[i]['kind'];
     kindOfFood.push(newKind);
   }
-  //Creamos una función para eliminar elementos duplicados
+  // Creamos una función para eliminar elementos duplicados
 
   Array.prototype.unique = function() {
     var el = this.concat().sort();
@@ -81,13 +81,17 @@ $(document).ready(function() {
     return el;
   };
 
-  var arrKindOfFood=kindOfFood.unique();
-
-  console.log(arrKindOfFood);
-
+  var arrKindOfFood = kindOfFood.unique();
+   //Añadimos todos los option con los values en el dataist
+   
+    for (var i = 0; i < arrKindOfFood.length; i++) {
+      var $option = $('<option value="'+arrKindOfFood[i]+'"></option>');  
+      $('#kind-of-food').append($option);
+      
+    }
+    
+    
   
-  var $datalist = $('#kind-of-food');
-  console.log($datalist);
 });
 
 /*
