@@ -15,6 +15,7 @@ Los resultados fueron los siguientes:
 * Informar si poseen estacionamiento
 
 # Testimonio de los usuarios 
+Los podemos visualizar en los siguientes enlaces:
 ![Imagenes](assets/videos/Andrea.mp4)
 ![Imagenes](assets/videos/Nelson.mp4)
 ![Imagenes](assets/videos/Dayer.mp4)
