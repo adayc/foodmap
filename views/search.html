@@ -46,31 +46,36 @@
       <section>
           <div class="container">
               <div class="row">
-                
-                  <div class="col-xs-12 text-center">
+                 <div class="col-xs-12">
                     <div id="map" class="map center-block"></div>
                   </div>
-                
-              </div>
+                 </div>
           </div>
       </section>
       
-
       <div class="container">
-        <div class="row">
-          <div class="input-group col-xs-12 flex-center justify-center">
-            <div class="input-group-btn">
-              
-             
-            
-            <!-- Caja de texto para ingresar el número de teléfono-->
-            <div class="col-xs-5">
-              <input id="txt-phone" type="text" class="form-control text-center" placeholder="123456789" aria-label="...">
+          <div class="row">
+              <div class="col-xs-12 text-center">
+                <h5>Ingrese el tipo de comida que desea buscar </h5>
+              </div>
             </div>
-          </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-sm-offset-2  flex-center justify-center">
+            <!-- Caja de texto para ingresar el ntipo de comida a buscar-->
+            <div class="margin-top center-block col-xs-12">
+                <input list="kind-of-food" name="kind-of-food" class="col-xs-12">
+                <datalist id="kind-of-food">
+                  <option value="Internet Explorer">
+                  <option value="Firefox">
+                  <option value="Chrome">
+                  <option value="Opera">
+                  <option value="Safari">
+                </datalist>
+            </div>
+          
         </div>
       </div>
-      
+    </div>
       
       
     </main>
