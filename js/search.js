@@ -82,16 +82,26 @@ $(document).ready(function() {
   };
 
   var arrKindOfFood = kindOfFood.unique();
-   //Añadimos todos los option con los values en el dataist
+  // Añadimos todos los option con los values en el dataist
    
-    for (var i = 0; i < arrKindOfFood.length; i++) {
-      var $option = $('<option value="'+arrKindOfFood[i]+'"></option>');  
-      $('#kind-of-food').append($option);
-      
-    }
-    
-    
-  
+  for (var i = 0; i < arrKindOfFood.length; i++) {
+    var $option = $('<option value="' + arrKindOfFood[i] + '"></option>');  
+    $('#kind-of-food').append($option);
+  }
+
+  $('#btn-search').on('click', function() {
+    $('#results').children().remove();
+    var filterSearch = $('#list-kind-of-food').val();
+    for (var i = 0; i < restaurants.length; i++) {
+      if (restaurants[i]['kind'] == filterSearch) {
+        var image = restaurants[i]['image'];
+            
+        var $newImg = $('<img src="../assets/images/' + restaurants[i]['image'] + '" alt="'+restaurants[i]['name'] +'">').addClass('margin-top');
+        $('#results').append($newImg);
+        
+      }
+    };
+  });
 });
 
 /*
