@@ -68,6 +68,7 @@ justify-content:space-between;
 }
 
 
+
 /*Estilo del index*/
 .gradient{
   background: linear-gradient(#8B2D55, #00BF6D);
@@ -75,6 +76,15 @@ justify-content:space-between;
   width:100%;
   
 }
+
+/*Estilos del search*/
+
+.map {
+  width: 80%;
+  height: 50vh;
+  border: 3px solid #D96600;
+}
+
 
 /*Estilo del signup*/
 .signup{
