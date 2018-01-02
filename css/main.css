@@ -57,13 +57,16 @@ justify-content:space-between;
   min-width:1rem;
 }
 
+/*
 .bg-purple{
   background-color:#FF00BF;
   margin-top:18vh;
 }
+*/
+
 /*Estilo del index*/
 .gradient{
-  background: linear-gradient(#76278F, #FF00BF);
+  background: linear-gradient(#8B2D55, #00BF6D);
   height:100vh;
   width:100%;
   
